@@ -1,0 +1,19 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "タスク管理", '#', id: "logo" %>
+    <nav>
+    <% if user_signed_in? %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= current_user.name %>さん</li>
+        <li><%= link_to "リストを作成", new_task_path %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+      </ul>
+    <% else %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%=link_to "新規登録",  new_user_registration_path, class: "nav-link nav-item" %>
+        <li><%=link_to "ログイン",  new_user_session_path, class: "nav-link nav-item" %>
+      </ul>
+    <% end %>
+    </nav>
+  </div>
+</header>

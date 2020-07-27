@@ -4,12 +4,15 @@
     <title>Todo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+  <%= render 'layouts/header' %>
+  <% flash.each do |key, value| %>
+     <div class="alert <%= bootstrap_class_for(key) %>"><%= value %></div>
+   <% end %>
+  <%= yield %>
   </body>
 </html>
+

@@ -1,0 +1,14 @@
+<div class="contents row">
+  <div class="container">
+    <%= form_with(model: @task, local: true) do |f| %>
+      <h3>投稿する</h3>
+      <div class="form-group">
+        <label>タスク入力</label>
+        <%= f.text_field :title, placeholder: "タスクを入力してください", class: "form-control"%>
+      </div>
+        <%= f.text_area  :memo, placeholder: "メモを入力して下さい", rows: "10", class: "form-control" %>
+        <%= f. %>
+        <%= f.submit "SEND" %>
+    <% end %>
+  </div>
+</div>
