@@ -1,0 +1,17 @@
+.ListWrapper {
+display: flex;
+  .List {
+    height: 200px;
+    width: 300px;
+    border: black solid 2px;
+    border-radius: 10px;
+    margin-right: 10px;
+    &__header{
+      display: flex;
+      justify-content: space-between;
+      &__title{
+        margin-left: 10px;
+      }
+    }
+  }
+}
