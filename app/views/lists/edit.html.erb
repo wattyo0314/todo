@@ -1,6 +1,6 @@
 <div class="contents row">
   <div class="container">
-    <%= form_with  model: @list,  method: :get, local: true  do |f| %>
+    <%= form_with  url: "/list/#{@list.id}/edit", model: @list,  method: :post, local: true  do |f| %>
       <h3>
         編集する
       </h3>
