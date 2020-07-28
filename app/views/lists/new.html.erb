@@ -1,0 +1,9 @@
+<div class="ListNewPage">
+  <div class="container text-center form-group">
+    <%= form_with url:"/lists", method: :post, class: "new-list",local: true do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control",placeholder: "タイトルを入力してください" %>
+       <div class="text-center"><%= f.submit "作成", class: "submitBtn" %></div>
+     <% end %>
+  </div>
+</div>
