@@ -6,6 +6,7 @@ class CreateTasks < ActiveRecord::Migration[6.0]
       t.time :time
       t.boolean :finished, default: false, null: false
       t.references :user, foreign_key: true, null: false
+      t.references :list, foreign_key: true, null: false
       t.timestamps
     end
   end

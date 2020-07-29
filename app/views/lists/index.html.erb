@@ -1,6 +1,23 @@
-<div class="contents row">
-  <% @lists.each do |list| %>
-    <div class="cotent_list form-group">
-      <p class="form-control"><%= list.title %>までにやること</p>
-  <% end %>
+<div class="ListIndex">
+  <div class="ListWrapper">
+    <% @lists.each do |list| %>
+      <div class="List">
+        <nav class="List__header">
+          <h3 class="List__header__title"><%= list.title %></h3>
+          <ul class="navbar-nav menu">
+            <li>
+              <%= form_with  model: @list,local: true  do |f| %>
+              <i class="far fa-edit"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to list_path(list.id), method: :delete, class: "nav-item" do %>
+              <i class="fas fa-trash-alt"></i>
+              <% end %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    <% end %>
+  </div>
 </div>

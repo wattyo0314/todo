@@ -1,0 +1,11 @@
+<div class="contents row">
+  <div class="container">
+    <%= form_with  url: "/lists/#{@list.id}/edit", model: @list, method: :get, local: true  do |f| %>
+      <h3>
+        編集する
+      </h3>
+      <%= f.text_field :title, placeholder: "タイトルを入力してください" %>
+      <div class="text-center"><%= f.submit "編集する", class: "submitBtn" %></div>
+    <% end %>
+  </div>
+</div>
