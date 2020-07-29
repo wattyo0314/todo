@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(version: 2020_07_27_024624) do
     t.time "time"
     t.boolean "finished", default: false, null: false
     t.integer "user_id", null: false
+    t.integer "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["list_id"], name: "index_tasks_on_list_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
@@ -45,5 +47,6 @@ ActiveRecord::Schema.define(version: 2020_07_27_024624) do
   end
 
   add_foreign_key "lists", "users"
+  add_foreign_key "tasks", "lists"
   add_foreign_key "tasks", "users"
 end
