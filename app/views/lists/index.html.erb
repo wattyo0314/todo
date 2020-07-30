@@ -5,7 +5,7 @@
         <div class="List__header">
           <h3 class="List__header__title"><%= list.title %></h3>
           <div class="dropdown">
-            <button type="button",id="dropdownMenu1",class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">
+            <button type="button",id="dropdownMenu1",class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">
             ...
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -19,6 +19,9 @@
       <div class="TaskWrapper">
         <div class ="card">
           <h4 class="card-title__title"><%= task.title %></h4>
+          <%= link_to list_task_path(task.id,list.id), method: :get do %>
+          <i class="fas fa-asterisk"></i>
+          <% end %>
         </div>
       </div>
       <% end %>

@@ -1,11 +1,11 @@
 <div class="contents row">
-  <div class="container">
+  <div class="container text-center">
     <%= form_with  url: "/lists/#{@list.id}", model: @list, method: :patch, local: true  do |f| %>
       <h3>
         編集する
       </h3>
       <%= f.text_field :title, placeholder: "タイトルを入力してください" %>
-      <div class="text-center"><%= f.submit "編集する", class: "submitBtn" %></div>
+      <div class="text-center"><%= f.submit "編集する", class: "btn btn-primary btn-sm" %></div>
     <% end %>
   </div>
 </div>

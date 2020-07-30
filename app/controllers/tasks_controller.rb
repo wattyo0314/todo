@@ -19,6 +19,10 @@ class TasksController < ApplicationController
     end
   end
 
+  def show
+    
+  end
+
   private
   def task_params
     params.require(:task).permit(:title, :memo, :time, :finished).merge(user_id: current_user.id)
