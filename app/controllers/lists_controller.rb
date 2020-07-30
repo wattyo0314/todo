@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
 
   def index
-    @lists =List.includes(:user).order("created_at ASC")
+    @lists =List.where(user: current_user).order("created_at ASC")
   end
   def new
     @list = List.new
