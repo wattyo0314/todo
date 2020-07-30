@@ -2,28 +2,26 @@
   <div class="ListWrapper">
     <% @lists.each do |list| %>
       <div class="List">
-        <nav class="List__header">
+        <div class="List__header">
           <h3 class="List__header__title"><%= list.title %></h3>
-          <ul class="navbar-nav menu">
-            <li>
-              <%= link_to  edit_list_path(list.id), method: :get, class: "nav-item" do  %>
-              <i class="far fa-edit"></i>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to list_path(list.id), method: :delete, class: "nav-item" do %>
-              <i class="fas fa-trash-alt"></i>
-              <% end %>
-            </li>
-          </ul>
-        </nav>
+          <div class="dropdown">
+            <button type="button",id="dropdownMenu1",class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">
+            ...
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <%= link_to  "リストを編集する", edit_list_path(list.id), method: :get, class: "dropdown-item" %>
+              <%= link_to  "リストを削除する",list_path(list.id), method: :delete, class: "dropdown-item" %>
+              <%= link_to "タスクを追加する",new_list_task_path(list), method: :get, class: "dropdown-item" %>
+            </div>
+          </div>
       </div>
-    <div class="AddTask">
+      <% list.tasks.each do |task| %>
       <div class="TaskWrapper">
-        <%= link_to new_list_task_path(list), method: :get, class: "PlusTask" do %>
-        <i class="fas fa-plus"></i>
-      <div class="AddTask__add">カードを追加する</div>
-        <% end %>
+        <div class ="card">
+          <h4 class="card-title__title"><%= task.title %></h4>
+        </div>
+      </div>
+      <% end %>
     <% end %>
       </div>
     </div>

@@ -1,16 +1,32 @@
-.ListWrapper {
-display: flex;
-  .List {
-    height: 200px;
-    width: 300px;
-    border: black solid 2px;
-    border-radius: 10px;
-    margin-right: 10px;
-    &__header{
-      display: flex;
-      justify-content: space-between;
-      &__title{
-        margin-left: 10px;
+.ListIndex {
+  .ListWrapper {
+    display: flex;
+    .List {
+      height: 300px;
+      width: 300px;
+      border: black solid 2px;
+      border-radius: 10px;
+      margin-right: 10px;
+      &__header{
+        display: flex;
+        justify-content: space-between;
+        &__title{
+          margin-left: 10px;
+          margin-top: 10px;
+        }
+      }
+    }
+    .AddTask {
+      &__bar {
+        position: relative;
+        top: 5vh;
+        right: 35vh;
+        .PlusTask {
+          display: flex;
+          &__add {
+            
+          }
+        }
       }
     }
   }

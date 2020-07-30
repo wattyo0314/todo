@@ -24,9 +24,8 @@ ActiveRecord::Schema.define(version: 2020_07_27_024624) do
     t.string "title", null: false
     t.text "memo", null: false
     t.time "time"
-    t.boolean "finished", default: false, null: false
-    t.integer "user_id", null: false
-    t.integer "list_id", null: false
+    t.integer "user_id"
+    t.integer "list_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["list_id"], name: "index_tasks_on_list_id"

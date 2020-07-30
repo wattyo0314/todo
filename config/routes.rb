@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'lists#index'
   get 'homes/index'
   resources :lists,  only: [:new, :create, :edit, :update, :index, :destroy] do
-    resources :tasks
+    resources :tasks, only: [:index, :new, :create]
     
   end
   resources :homes
