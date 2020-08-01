@@ -1,7 +1,9 @@
 class ListsController < ApplicationController
+  before_action  :find_id, only: [:edit, :update]
 
   def index
-    @lists =List.where(user: current_user).order("created_at ASC")
+    @lists = List.where(user: current_user).order("created_at ASC")
+    @tasks = List.joins(:task).includes(:task).order("time ASC")
   end
   def new
     @list = List.new
@@ -17,16 +19,13 @@ class ListsController < ApplicationController
   end
 
   def edit
-    @list = List.find(params[:id])
   end
 
   def update
-    @list = List.find(params[:id])
-    logger.debug"list: #{@list.attributes.inspect}"
     if @list.update(list_params)
-      redirect_to root_path, success: "リストを更新しました"
+      redirect_to root_path(@list), success: "リストを更新しました"
     else
-      render :edit, alert: "リストを更新できませんでした"
+      render :edit, warning: "リストを更新できませんでした"
     end
   end
 
@@ -38,6 +37,10 @@ class ListsController < ApplicationController
 
   private
   def list_params
-    params.permit(:title).merge(user: current_user)
+    params.require(:list).permit(:title).merge(user: current_user)
+  end
+
+  def find_id
+    @list = List.find(params[:id])
   end
 end

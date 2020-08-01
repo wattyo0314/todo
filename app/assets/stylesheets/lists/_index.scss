@@ -2,30 +2,36 @@
   .ListWrapper {
     display: flex;
     .List {
-      height: 300px;
-      width: 300px;
-      border: black solid 2px;
+      margin-left: 30px;
+      width: 200px;
+      border: 2px solid ;
       border-radius: 10px;
       margin-right: 10px;
       &__header{
+        margin-bottom: 20px;
         display: flex;
+        align-items: center;
         justify-content: space-between;
+        background-color: lightgray;
+        height: 50px;
         &__title{
-          margin-left: 10px;
-          margin-top: 10px;
+          padding-left: 10px;
         }
       }
     }
-    .AddTask {
-      &__bar {
-        position: relative;
-        top: 5vh;
-        right: 35vh;
-        .PlusTask {
-          display: flex;
-          &__add {
-            
-          }
+    .TaskWrapper {
+      .card {
+          height: 60px;
+          width: 150px;
+          margin-left: 20px;
+          margin-bottom: 5px;
+        .card-body {
+          height: 100px;
+        }
+        .icon {
+          position: absolute;
+        }
+        .card-title {
         }
       }
     }

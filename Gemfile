@@ -56,3 +56,5 @@ gem 'devise'
 gem 'bootstrap-sass', '3.4.1'
 gem 'pry-rails'
 gem "font-awesome-sass"
+gem 'haml-rails'
+gem 'rails-i18n'

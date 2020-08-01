@@ -1,0 +1,21 @@
+.ListIndex
+  .ListWrapper
+    -@lists.each do |list|
+      .List.border-success
+        .List__header
+          %h3.List__header__title
+            = list.title
+          .dropdown
+            #dropdown.dropdown-toggle{"aria-expanded": "false", "aria-haspopup": "true", "data-toggle": "dropdown", href: "#"}...
+            .dropdown-menu{"aria-labelledby": "dropdown"}
+              = link_to  "リストを編集する", edit_list_path(list.id), method: :get, class: "dropdown-item"
+              = link_to  "リストを削除する",list_path(list.id), method: :delete, class: "dropdown-item",  data: { confirm: '削除しますか？' }
+              = link_to "タスクを追加する",new_list_task_path(list), method: :get, class: "dropdown-item"
+        .TaskWrapper
+          -list.tasks.each do |task|
+            .card
+              .card-body.card-link
+                = link_to list_task_path(list,task), method: :get, class: "card-title" do
+                  = task.title
+                %h6.card-subtitle.mb-2.text-muted
+                = task.time.strftime("%H:%M")

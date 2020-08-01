@@ -1,11 +1,9 @@
 class TasksController < ApplicationController
   before_action :set_list
-  def index
-  @tasks = @list.tasks.includes(:user)
-  end
 
   def new
     @task = Task.new
+    @list = List.find_by(id: params[:list_id])
   end
 
   def create
@@ -19,13 +17,31 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+    @task = @list.tasks.find(params[:id])
+  end
+
+  def update
+    @task = @list.tasks.find(params[:id])
+    if @task.update(task_params)
+      redirect_to root_path(@list), success: "リストを更新しました"
+    else
+      render :edit, alert: "リストを更新できませんでした"
+    end
+  end
+
   def show
-    
+    @task = @list.tasks.find_by(id: params[:id])
+  end
+
+  def destroy
+    @list.tasks.find(params[:id]).destroy
+    redirect_to root_path, success: "タスクを削除しました"
   end
 
   private
   def task_params
-    params.require(:task).permit(:title, :memo, :time, :finished).merge(user_id: current_user.id)
+    params.require(:task).permit(:title, :memo, :time).merge(user_id: current_user.id)
   end
 
   def set_list

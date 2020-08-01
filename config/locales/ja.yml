@@ -204,3 +204,11 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  activerecord:
+    models:
+      task: タスク
+    attributes:
+      task:
+        title: タスクタイトル
+        memo: メモ
+        time: 開始予定時刻
