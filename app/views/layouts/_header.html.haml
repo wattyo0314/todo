@@ -1,19 +1,8 @@
-%body
-  %header.navbar.navbar-expand-sm.navbar-dark.bg-dark.mt-3.mb-3
-    .container
-      %nav.nav
-        = link_to "タスク管理", root_path, class: "navbar-brand"
-        .collapse.navbar-collapse
-          - if user_signed_in?
-            %ul.navbar-nav
-              %li.nav-item.active
-                = current_user.name
-                さん
-              %li= link_to "リストを作成", new_list_path
-              %li= link_to "ログアウト", destroy_user_session_path, method: :delete
-          - else
-            %ul.nav.navbar-nav.navbar-right
-              %li
-                = link_to "新規登録",  new_user_registration_path, class: "nav-link nav-item"
-              %li
-                = link_to "ログイン",  new_user_session_path, class: "nav-link nav-item"
+%nav.navbar.navbar-dark.bg-dark
+%a.navbar-brand{:href => "#"} タスク管理
+%button.navbar-toggler{"aria-controls" => "navmenu1", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navmenu1", "data-toggle" => "collapse", :type => "button"}
+  %span.navbar-toggler-icon
+#navmenu1.collapse.navbar-collapse
+  .navbar-nav
+    = link_to "リストを作成", new_list_path, class: "nav-item.nav-link"
+    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-item.nav-link"
