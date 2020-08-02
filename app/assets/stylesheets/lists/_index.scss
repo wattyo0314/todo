@@ -2,38 +2,93 @@
   .ListWrapper {
     display: flex;
     .List {
+      background-color: #ebecf0;
       margin-left: 30px;
       width: 200px;
       border: 2px solid ;
       border-radius: 10px;
       margin-right: 10px;
       &__header{
-        margin-bottom: 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: lightgray;
+        background-color: #ebecf0;
         height: 50px;
         &__title{
           padding-left: 10px;
         }
       }
+      &__footer {
+        padding: 10px;
+        font-size: 15px;
+        a {
+          color: black;
+          display: block;
+          padding: 0 10px;
+          background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgb(49, 170, 226) 50%);
+          background-position: 0 0;
+          background-size: 200% auto;
+          transition: .3s;
+        }
+        a:hover{
+          background-position: -100% 0;
+          color: #fff;
+          text-decoration: none;
+        }
+
+      }
+    }
+    .AddList {
+      border-radius: 10px;
+      height: 30px;
+      font-size: 20px;
+      background-color: #ebecf0;
+      a {
+        position: relative;
+        display: inline-block;
+        transition: .3s;
+        display: block;
+      }
+      a::after {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        content: '';
+        width: 0;
+        height: 2px;
+        background-color: #31aae2;
+        transition: .3s;
+        transform: translateX(-50%);
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+      
+      a:hover::after{
+        width: 100%;
+      }
     }
     .TaskWrapper {
-      .card {
+      background-color: #ebecf0;
+        .card {
           height: 60px;
           width: 150px;
           margin-left: 20px;
           margin-bottom: 5px;
-        .card-body {
-          height: 100px;
+          .task-title,.task-title span {
+            display: inline-block;
+            color:  #31aae2;
+            font-size: 15px;
+            margin-bottom: 5px;
+          }
+          .task-title span {
+            transition: .5s;
+          }
+          .task-title:hover span {
+            transform: rotateX(360deg);
+          }
         }
-        .icon {
-          position: absolute;
-        }
-        .card-title {
-        }
-      }
     }
   }
 }

@@ -58,3 +58,4 @@ gem 'pry-rails'
 gem "font-awesome-sass"
 gem 'haml-rails'
 gem 'rails-i18n'
+gem 'jquery-rails'
