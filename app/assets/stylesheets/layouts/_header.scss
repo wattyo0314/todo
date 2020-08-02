@@ -1,12 +1,51 @@
-header {
-  .header-logo {
-    
-    color: #ffffff;
-    font-size: 20px;
-    margin-top: 20vh;
+.header {
+  height: 50px;
+  width:  100vw;
+  background-color: lightgreen;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  h1 {
+    padding-left: 30px;
+    line-height: 2;
   }
-  
-  .user-name {
-    color: #ffffff;
+  ol {
+    display: flex;
+    list-style: none;
+    width: 300px;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 15px;
+    .cp_link {
+      display: inline-block;
+      perspective: 1000px;
+      perspective-origin: 50% 50%;
+      vertical-align: bottom;
+      overflow: hidden;
+    }
+    .cp_link span {
+      display: inline-block;
+      position: relative;
+      padding: 0.1em 0.3em;
+      transition: .4s;
+      transform-origin: 50% 0%;
+      transform-style: preserve-3d;
+    }
+    .cp_link span:after {
+      display: inline-block;
+      position: absolute;
+      padding: 0.1em 0.3em;
+      left: 0;
+      top: 0;
+      content: attr(data-text);
+      color: #fff;
+      background-color: #00ACC1;
+      transform-origin: 50% 0%;
+      transform: translate3d(0, 105%, 0) rotateX(-90deg);
+    }
+    .cp_link:hover span {
+      background-color: #00ACC1;
+      transform: translate3d(0, 0, -30px) rotateX(90deg);
+    }
   }
 }

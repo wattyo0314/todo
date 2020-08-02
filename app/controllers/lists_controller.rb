@@ -3,7 +3,7 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.where(user: current_user).order("created_at ASC")
-    @tasks = List.joins(:task).includes(:task).order("time ASC")
+    List.joins(:task).includes(:task).order("tasks.time ASC")
   end
   def new
     @list = List.new

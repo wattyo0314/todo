@@ -1,19 +1,19 @@
 %body
-  %header.navbar.navbar-expand-sm.navbar-dark.bg-dark.mt-3.mb-3
-    .container
-      %nav.nav
-        = link_to "タスク管理", root_path, class: "navbar-brand"
-        .collapse.navbar-collapse
-          - if user_signed_in?
-            %ul.navbar-nav
-              %li.nav-item.active
-                = current_user.name
-                さん
-              %li= link_to "リストを作成", new_list_path
-              %li= link_to "ログアウト", destroy_user_session_path, method: :delete
-          - else
-            %ul.nav.navbar-nav.navbar-right
-              %li
-                = link_to "新規登録",  new_user_registration_path, class: "nav-link nav-item"
-              %li
-                = link_to "ログイン",  new_user_session_path, class: "nav-link nav-item"
+  %header.header
+    %h1
+      タスク管理
+    - if user_signed_in?
+      %ol.info
+        %li.user-name
+          = current_user.name
+        %li
+          = link_to destroy_user_session_path, method: :delete, class: "cp_link" do
+            %span{"data-text" => "ログアウト"} ログアウト
+    - else
+      %ol.info
+        %li
+          = link_to new_user_session_path, class: "cp_link" do
+            %span{"data-text" => "ログイン"} ログイン
+        %li
+          = link_to new_user_registration_path, class: "cp_link" do
+            %span{"data-text" => "会員登録"} 新規会員登録
