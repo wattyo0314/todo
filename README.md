@@ -1,24 +1,20 @@
-# README
+タスク管理アプリ
+====
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Overview
+このアプリはタスクが簡単にできるアプリです。
 
-Things you may want to cover:
+## Description
+リストを作成し、その中にタスクを貼り付けていきます。
 
-* Ruby version
+## set up
+①ログインします。
+②リストを追加ボタンがあるので、それをクリックするとリスト作成画面に移るのでそこに日付を入力します。
+③リストの下部にタスクを追加ボタンがありますので、それをクリックし、タイトル、メモ、開始時刻を入力します。
+④タスクタイトルをクリックすると詳細ページをみることができます。
 
-* System dependencies
 
-* Configuration
+## Author
 
-* Database creation
+[tcnksm](https://github.com/wattyo0314/todo.git)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
