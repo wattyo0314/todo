@@ -1,5 +1,5 @@
 .LoginPage
-  .wrapper.text-center
+  .wrapper
     %h2 ログイン
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .form-group
@@ -15,5 +15,5 @@
           = f.check_box :remember_me
           = f.label :remember_me
       .btn
-        = f.submit "ログイン", class: "btn btn-primary"
+        = f.submit "ログイン", class: "btn btn-primary ml-4"
     = render "devise/shared/links"
