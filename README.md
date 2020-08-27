@@ -17,7 +17,7 @@
 インデックスページです  
 https://i.gyazo.com/b37d40c823308ccaefb8968b815430cb.png  
 リストを追加するを押すとリスト作成ページがでます。  
-https://i.gyazo.com/969a10b53aef3f5e4a33237044153746.png  
+https://i.gyazo.com/c5f8a190ddb60ea2430cf9d08a886bdd.png  
 タスクを追加するを押すとタスクの追加ができます。  
 https://i.gyazo.com/c3ae4f8edbe51ad9adf321c48bb8e7a4.png  
 タスクのタイトルをクリックするとタスクの詳細が確認できます。  
