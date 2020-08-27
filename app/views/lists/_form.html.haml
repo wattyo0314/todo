@@ -4,6 +4,8 @@
   .container.text-center
     .form-group
       = f.label :title, "タスク予定日"
-      = f.text_field :title, placeholder: "タスクを行う日付を入力してください", class: "form-control "
+      %br
+      = f.text_field :title, placeholder: "日付を入力してください", class: "form-control, w-20"
+      %br
       %br
       = f.submit "更新する", class: "btn btn-primary btn-sm"
